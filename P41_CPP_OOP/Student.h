@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "Array.h"
+#include "String.h"
 
 using namespace std;
 
@@ -9,7 +10,7 @@ class Student
 {
 private:
 	int id;
-	char* name;
+	String name;
 	int age;
 
 	const int count;
@@ -22,19 +23,17 @@ public:
 
 	static int totalObjects;
 
-	Student() : count(0), id(0)
+	Student() : Student(0, "No Name", 10, 0)
 	{
-		cout << "Constructor" << endl;
-		setName("No Name");	
-		setAge(10);
-
-		totalObjects++;
+		//cout << "Constructor" << endl;
+		//setName("No Name");	
+		//setAge(10);
+		//totalObjects++;
 	}
 
-	Student(int i, const char* n, int a, int c) : count{ c }
+	Student(int i, const char* n, int a, int c) : count{ c }, id(i)
 	{
 		cout << "Constructor 3 param" << endl;
-		id = i;
 		setName(n);
 		setAge(a);
 
@@ -44,8 +43,8 @@ public:
 	~Student()
 	{
 		cout << "Destructor" << endl;
-		if (name != nullptr)
-			delete[] name;
+		/*if (name != nullptr)
+			delete[] name;*/
 
 		totalObjects--;
 	}
@@ -64,24 +63,18 @@ public:
 
 	void setName(const char* n)
 	{
-		if (n != nullptr)
-		{
-			if (name != nullptr)
-				delete[] name;
-			name = new char[strlen(n) + 1];
-			strcpy_s(name, strlen(n) + 1, n);
-		}
+		name.set(n);
 	}
 
 	char* getName()
 	{
-		return name;
+		return name.get();
 	}
 
 	void print()
 	{
 		cout << "ID  : " << id << endl;
-		cout << "Name: " << name << endl;
+		cout << "Name: " << name.get() << endl;
 		cout << "Age : " << age << endl;
 	}
 

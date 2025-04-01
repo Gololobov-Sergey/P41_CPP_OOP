@@ -1,5 +1,7 @@
 #pragma once
+#include <iostream>
 
+using namespace std;
 
 class Array
 {
@@ -25,7 +27,7 @@ public:
 		delete arr;
 	}
 
-	void set()
+	void set() const
 	{
 		for (int i = 0; i < size; i++)
 		{
@@ -33,7 +35,7 @@ public:
 		}
 	}
 
-	void set(int min, int max)
+	void set(int min, int max) const
 	{
 		for (int i = 0; i < size; i++)
 		{
@@ -41,7 +43,7 @@ public:
 		}
 	}
 
-	void print()
+	void print() const
 	{
 		for (int i = 0; i < size; i++)
 		{
@@ -96,7 +98,7 @@ public:
 		arr = temp;
 	}
 
-	int sum()
+	int sum() const
 	{
 		int sum = 0;
 		for (size_t i = 0; i < size; i++)
@@ -106,7 +108,7 @@ public:
 		return sum;
 	}
 
-	int max()
+	int max() const
 	{
 		int max = arr[0];
 		for (size_t i = 1; i < size; i++)
@@ -119,7 +121,7 @@ public:
 		return max;
 	}
 
-	int min()
+	int min() const
 	{
 		int min = arr[0];
 		for (size_t i = 1; i < size; i++)
@@ -132,7 +134,7 @@ public:
 		return min;
 	}
 
-	int count(int value)
+	int count(int value) const
 	{
 		int count = 0;
 		for (size_t i = 0; i < size; i++)
@@ -145,12 +147,12 @@ public:
 		return count;
 	}
 
-	double average()
+	double average() const
 	{
 		return (double)sum() / size;
 	}
 
-	int getSize()
+	int getSize() const
 	{
 		return size;
 	}

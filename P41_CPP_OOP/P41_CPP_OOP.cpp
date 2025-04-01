@@ -2,30 +2,55 @@
 
 #include "Student.h"
 #include "Array.h"
+#include "String.h"
+#include "Time.h"
 
 using namespace std;
 
 
-void print(Array a)
+void print(String a)
 {
-	a.print();
+	cout << a.get() << endl;	
 }
 
 
 int main()
 {
+	// 01.04.2025
 
-	Array a1(10);
+
+	//Time t1(20);
+	//t1.print();
+
+	Time t[10];
+
+
+	//String s1;
+	//String s2(10);
+	//const String s3("mama");
+
+	//cout << s1.get() << endl;	
+	//cout << s2.get() << "mama" << endl;	// print(s2);
+	//cout << s3.get() << endl;
+
+	////s3.set();
+	//cout << s3.get() << endl;
+
+
+	//cout << String::length("mama") << endl;
+
+
+
+
+	/*const Array a1(10);
 	a1.set();
 	a1.print();
 	a1.insert(100, 5);
-	a1.print();	
-	//print(10);
-	a1.print();
+	a1.print();	*/
+	////print(10);
+	//a1.print();
 
-	String s1;
-	String s2(10);
-	String s1("mama");
+	
 
 	//cout << Student::totalObjects << endl;
 	//{
