@@ -4,6 +4,7 @@
 #include "Array.h"
 #include "String.h"
 #include "Time.h"
+#include "Reservoir.h"
 
 using namespace std;
 
@@ -14,15 +15,87 @@ void print(String a)
 }
 
 
+enum class Fruit
+{
+	APPLE,
+	BANANA,
+	ORANGE = 100,
+	GRAPE,
+	PEAR
+};
+
+enum class Color
+{
+	RED,
+	GREEN,
+	BLUE,
+	YELLOW,
+	ORANGE
+};
+
 int main()
 {
+	//05.04.2025
+
+	Reservoir r1(ReservoirType::SEA, "Black Sea", 10000, 20000, 1000);
+	r1.print();
+
+	Reservoir r2(r1);
+	r2.print();
+
+	Reservoir r3 = r1;
+	r3.print();
+
+	
+
+
+	//String s1("Black Sea");
+	//String s2("mama");
+	////
+	//s2 = s1 = s2 = s1; // s2.op=(s1);
+
+
+
+	/*Fruit f = Fruit::APPLE;
+	Color c = Color::RED;
+	
+	switch (f)
+	{
+	case Fruit::APPLE:
+		break;
+	case Fruit::BANANA:
+		break;
+	case Fruit::ORANGE:
+		break;
+	case Fruit::GRAPE:
+		break;
+	case Fruit::PEAR:
+		break;
+	default:
+		break;
+	}*/
+
+
+
+	/*String s("mama");
+	cout << s.get() << endl;
+	print(s);
+	cout << s.get() << endl;
+
+	String s2(s);
+
+	String s3 = s;*/
+
+
+
+
 	// 01.04.2025
 
 
 	//Time t1(20);
 	//t1.print();
 
-	Time t[10];
+	//Time t[10];
 
 
 	//String s1;

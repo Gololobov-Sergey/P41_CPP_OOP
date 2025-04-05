@@ -2,7 +2,7 @@
 
 class String
 {
-	char* str;
+	char* str = nullptr;
 	int size;
 
 	static int totalObjects;
@@ -14,6 +14,10 @@ public:
 	explicit String(int size);
 
 	String(const char* str);
+
+	String(const String& obj);
+
+	String& operator=(const String& obj);
 
 	~String();
 
@@ -49,12 +53,49 @@ String::String(int size)
 
 String::String(const char* str)
 {
+	//cout << "Constructor" << endl;
 	this->set(str);
 	totalObjects++;
 }
 
+String::String(const String& obj)
+{
+	//cout << "Copy Constructor" << endl;
+	size = obj.size;
+	str = new char[size + 1];
+	for (size_t i = 0; i <= size; i++)
+	{
+		str[i] = obj.str[i];
+	}
+	totalObjects++;
+}
+
+String& String::operator=(const String& obj)
+{
+	if (this == &obj)
+	{
+		return *this;
+	}
+
+	if (str != nullptr)
+	{
+		delete[] str;
+	}
+
+	size = obj.size;
+	str = new char[size + 1];
+	for (size_t i = 0; i <= size; i++)
+	{
+		str[i] = obj.str[i];
+	}
+
+	return *this;
+}
+
+
 String::~String()
 {
+	//cout << "Destructor" << endl;
 	delete[] str;
 	totalObjects--;
 }
