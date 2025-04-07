@@ -5,6 +5,7 @@
 #include "String.h"
 #include "Time.h"
 #include "Reservoir.h"
+#include "Fraction.h"
 
 using namespace std;
 
@@ -35,16 +36,96 @@ enum class Color
 
 int main()
 {
+
+	Fraction f1(1, 2);
+	Fraction f2(1, 4);
+	//Fraction f3 = f1 + 10;
+	//f3.print();
+	//Fraction f4 = 10 + f1;
+	//f4.print();
+
+
+	if (f1 < f2)
+	{
+		cout << true << endl;
+	}
+	else
+	{
+		cout << false << endl;
+	}
+
+	float s = f1;
+
+	//"mama" * 3; // mamamamamama
+
+	//f1 = f2;
+	//f1.print();
+
+	//f1++.print(); 
+	//++f1 + f2;
+	//f1.print();
+
+	//f1 += f2; // f1 = f1 + f2
+
+	//Fraction f3 = f1.add(f2);
+	//Fraction f3 = f1 + f2; // f1.operator+(f2);
+	//f3.print();
+	//Fraction f4 = f1 - f2;
+	//f4.print();
+
+
+	//// *, ->, ., :: , sizeof(), ?:
+	// 
+	//// - , + , ++ , -- 
+	//// +, -, *, /, =, %, += , -=, *= , /=, %=, 
+	//// ! 
+	//// < > <= >= != == , &&, || 
+	// 
+	// 
+
+
+	Time t1(0, 0, 30);
+	Time t2(0, 0, 50);
+	Time t3 = t1 + t2;
+	Time t4 = t1 + 10;
+	Time t5 = 100 + t1;
+	Time t6 = t1 - t2;
+	t1 += t2;
+	t1 -= t2;
+	t1 <=> t2;
+	int s = t1;
+	t1.print();
+	t1++;
+	++t1;
+	t1--;
+	--t1;
+
+	// TODO
+	String s1("mama");
+	String s2("papa");
+	s1 + s2;
+	s1 * 3;
+	3 * s1;
+	s1 <=> s2;
+	s1 += s2;
+
+
+
+	
+	//int a;
+	//a++;
+	//++a;
+
 	//05.04.2025
 
-	Reservoir r1(ReservoirType::SEA, "Black Sea", 10000, 20000, 1000);
+	/*Reservoir r1(ReservoirType::SEA, "Black Sea", 10000, 20000, 1000);
 	r1.print();
 
 	Reservoir r2(r1);
 	r2.print();
 
 	Reservoir r3 = r1;
-	r3.print();
+	r3.print();*/
 
 	
 
