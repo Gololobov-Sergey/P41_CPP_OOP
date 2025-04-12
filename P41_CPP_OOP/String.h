@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+
+using namespace std;
 
 class String
 {
@@ -32,6 +35,12 @@ public:
 	int length() const;
 
 	static int getTotalObjects();
+
+	void operator()(const char* st);
+
+	void operator+=(String st);
+
+	String operator+(const String& st);
 };
 
 int String::totalObjects = 0;
@@ -141,7 +150,31 @@ int String::length() const
 	return size;
 }
 
-inline int String::getTotalObjects()
+int String::getTotalObjects()
 {
 	return totalObjects;
+}
+
+void String::operator()(const char* st)
+{
+	this->set(st);
+}
+
+void String::operator+=(String st)
+{
+	*this = *this + st;
+}
+
+String String::operator+(const String& st)
+{
+	char* temp = new char[size + st.size + 1];
+	for (size_t i = 0; i < size; i++)
+	{
+		temp[i] = str[i];
+	}
+	for (size_t i = 0; i <= st.size; i++)
+	{
+		temp[i + size] = st.str[i];
+	}
+	return String(temp);
 }

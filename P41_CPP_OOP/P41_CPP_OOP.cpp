@@ -6,6 +6,7 @@
 #include "Time.h"
 #include "Reservoir.h"
 #include "Fraction.h"
+#include "var.h"
 
 using namespace std;
 
@@ -37,15 +38,49 @@ enum class Color
 int main()
 {
 
-	Fraction f1(1, 2);
-	Fraction f2(1, 4);
+	//12.04.2025
+
+
+	var a = 10;
+	var b = "mama"; 
+	var c = 3.14;
+
+	a.print();
+	b.print();
+	c.print();
+
+	a = "papa";
+
+
+	/*Array a(10);
+	a.set();
+	a.print();
+
+	a[5] = 999;
+	
+	cout << a[3] << endl;
+	cout << a["one"] << endl;
+	a.print();
+
+	a(10);
+
+	int s = a;
+
+	cout << ((String)a).get() << endl;
+
+
+	String st("mama");
+	st("papa");*/
+
+	//Fraction f1(1, 2);
+	//Fraction f2(1, 4);
 	//Fraction f3 = f1 + 10;
 	//f3.print();
 	//Fraction f4 = 10 + f1;
 	//f4.print();
 
 
-	if (f1 < f2)
+	/*if (f1 < f2)
 	{
 		cout << true << endl;
 	}
@@ -54,7 +89,7 @@ int main()
 		cout << false << endl;
 	}
 
-	float s = f1;
+	float s = f1;*/
 
 	//"mama" * 3; // mamamamamama
 
@@ -84,30 +119,30 @@ int main()
 	// 
 
 
-	Time t1(0, 0, 30);
-	Time t2(0, 0, 50);
-	Time t3 = t1 + t2;
-	Time t4 = t1 + 10;
-	Time t5 = 100 + t1;
-	Time t6 = t1 - t2;
-	t1 += t2;
-	t1 -= t2;
-	t1 <=> t2;
-	int s = t1;
-	t1.print();
-	t1++;
-	++t1;
-	t1--;
-	--t1;
+	//Time t1(0, 0, 30);
+	//Time t2(0, 0, 50);
+	//Time t3 = t1 + t2;
+	//Time t4 = t1 + 10;
+	//Time t5 = 100 + t1;
+	//Time t6 = t1 - t2;
+	//t1 += t2;
+	//t1 -= t2;
+	//t1 <=> t2;
+	//int s = t1;
+	//t1.print();
+	//t1++;
+	//++t1;
+	//t1--;
+	//--t1;
 
-	// TODO
-	String s1("mama");
-	String s2("papa");
-	s1 + s2;
-	s1 * 3;
-	3 * s1;
-	s1 <=> s2;
-	s1 += s2;
+	//// TODO
+	//String s1("mama");
+	//String s2("papa");
+	//s1 + s2;
+	//s1 * 3;
+	//3 * s1;
+	//s1 <=> s2;
+	//s1 += s2;
 
 
 

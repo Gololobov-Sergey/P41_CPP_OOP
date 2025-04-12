@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <cassert>
+#include "String.h"
 
 using namespace std;
 
@@ -167,5 +169,50 @@ public:
 		return size;
 	}
 
-};
+	int at(int index)
+	{
+		assert(index >= 0 && index < size);
 
+		return arr[index];
+	}
+
+	int& operator[](int index)
+	{
+		assert(index >= 0 && index < size);
+
+		return arr[index];
+	}
+
+	int& operator[](const char* index)
+	{
+		if (strcmp(index, "one") == 0)
+			return arr[1];
+	}
+
+
+	void operator()(int value)
+	{
+		for (size_t i = 0; i < size; i++)
+		{
+			arr[i] += value;
+		}
+	}
+
+	operator int()
+	{
+		return sum();
+	}
+
+	operator String ()
+	{
+		String s("");
+		char buff[10];
+		for (size_t i = 0; i < size; i++)
+		{
+			_itoa_s(arr[i], buff, 10);
+			s += buff;
+			s += " ";
+		}
+		return s;
+	}
+};
