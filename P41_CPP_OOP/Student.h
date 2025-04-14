@@ -17,7 +17,7 @@ private:
 
 	static int planet;
 
-	Array marks;
+	Array<int> marks;
 
 public:
 

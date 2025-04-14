@@ -5,9 +5,10 @@
 
 using namespace std;
 
+template<class T>
 class Array
 {
-	int* arr;
+	T* arr;
 	int size;
 
 public:
@@ -21,13 +22,16 @@ public:
 	explicit Array(int s)
 	{
 		size = s;
-		arr = new int[size];
+		if (size != 0)
+			arr = new T[size];
+		else
+			arr = nullptr;
 	}
 
 	Array(const Array& obj)
 	{
 		size = obj.size;
-		arr = new int[size];
+		arr = new T[size];
 		for (size_t i = 0; i < size; i++)
 		{
 			arr[i] = obj.arr[i];
@@ -36,16 +40,10 @@ public:
 
 	~Array()
 	{
-		delete arr;
+		delete[] arr;
 	}
 
-	void set() const
-	{
-		for (int i = 0; i < size; i++)
-		{
-			arr[i] = rand() % 10;
-		}
-	}
+	void set() const;
 
 	void set(int min, int max) const
 	{
@@ -64,22 +62,22 @@ public:
 		cout << endl;
 	}
 
-	void add(int value)
+	void add(T value)
 	{
-		int* temp = new int[size + 1];
+		T* temp = new T[size + 1];
 		for (size_t i = 0; i < size; i++)
 		{
 			temp[i] = arr[i];
 		}
 		temp[size] = value;
-		delete arr;
+		delete[] arr;
 		size++;
 		arr = temp;
 	}
 
-	void insert(int value, int index)
+	void insert(T value, int index)
 	{
-		int* temp = new int[size + 1];
+		T* temp = new T[size + 1];
 		for (size_t i = 0; i < index; i++)
 		{
 			temp[i] = arr[i];
@@ -89,14 +87,14 @@ public:
 		{
 			temp[i + 1] = arr[i];
 		}
-		delete arr;
+		delete[] arr;
 		size++;
 		arr = temp;
 	}
 
 	void remove(int index)
 	{
-		int* temp = new int[size - 1];
+		T* temp = new T[size - 1];
 		for (size_t i = 0; i < index; i++)
 		{
 			temp[i] = arr[i];
@@ -105,7 +103,7 @@ public:
 		{
 			temp[i] = arr[i + 1];
 		}
-		delete arr;
+		delete[] arr;
 		size--;
 		arr = temp;
 	}
@@ -120,9 +118,9 @@ public:
 		return sum;
 	}
 
-	int max() const
+	T max() const
 	{
-		int max = arr[0];
+		T max = arr[0];
 		for (size_t i = 1; i < size; i++)
 		{
 			if (arr[i] > max)
@@ -133,9 +131,9 @@ public:
 		return max;
 	}
 
-	int min() const
+	T min() const
 	{
-		int min = arr[0];
+		T min = arr[0];
 		for (size_t i = 1; i < size; i++)
 		{
 			if (arr[i] < min)
@@ -146,7 +144,7 @@ public:
 		return min;
 	}
 
-	int count(int value) const
+	int count(T value) const
 	{
 		int count = 0;
 		for (size_t i = 0; i < size; i++)
@@ -169,21 +167,21 @@ public:
 		return size;
 	}
 
-	int at(int index)
+	T at(int index)
 	{
 		assert(index >= 0 && index < size);
 
 		return arr[index];
 	}
 
-	int& operator[](int index)
+	T& operator[](int index)
 	{
 		assert(index >= 0 && index < size);
 
 		return arr[index];
 	}
 
-	int& operator[](const char* index)
+	T& operator[](const char* index)
 	{
 		if (strcmp(index, "one") == 0)
 			return arr[1];
@@ -216,3 +214,32 @@ public:
 		return s;
 	}
 };
+
+
+
+template<class T>
+void Array<T>::set() const
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = T();
+	}
+}
+
+template<>
+void Array<int>::set() const
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 10;
+	}
+}
+
+template<>
+void Array<double>::set() const
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = 9.9999;
+	}
+}

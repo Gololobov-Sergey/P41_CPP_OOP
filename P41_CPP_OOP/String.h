@@ -41,6 +41,9 @@ public:
 	void operator+=(String st);
 
 	String operator+(const String& st);
+
+	friend ostream& operator<< (ostream& out, const String& obj);
+	friend istream& operator>> (istream& in, String& obj);
 };
 
 int String::totalObjects = 0;
@@ -88,7 +91,7 @@ String& String::operator=(const String& obj)
 
 	if (str != nullptr)
 	{
-		delete[] str;
+		delete str;
 	}
 
 	size = obj.size;
@@ -105,13 +108,13 @@ String& String::operator=(const String& obj)
 String::~String()
 {
 	//cout << "Destructor" << endl;
-	delete[] str;
+	delete str;
 	totalObjects--;
 }
 
 void String::set(const char* str)
 {
-	delete[] this->str;
+	delete this->str;
 
 	size = String::length(str);
 	this->str = new char[size + 1];
@@ -121,13 +124,6 @@ void String::set(const char* str)
 	}
 }
 
-void String::set()
-{
-	char buff[8000];
-	cin.getline(buff, 8000);
-
-	this->set(buff);
-}
 
 char* String::get() const
 {
@@ -177,4 +173,21 @@ String String::operator+(const String& st)
 		temp[i + size] = st.str[i];
 	}
 	return String(temp);
+}
+
+
+ostream& operator<< (ostream& out, const String& obj)
+{
+	out << obj.str;
+	return out;
+}
+
+inline istream& operator>>(istream& in, String& obj)
+{
+	char buff[8000];
+	cin.getline(buff, 8000);
+
+	obj.set(buff);
+
+	return in;
 }

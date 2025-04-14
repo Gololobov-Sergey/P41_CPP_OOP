@@ -38,10 +38,37 @@ enum class Color
 int main()
 {
 
+	/*String st("mama");
+	cout << st << endl;
+	cin >> st;
+	cout << st << endl;*/
+
+	/*Array<char> a(10);
+	a.set('A', 'X');
+	a.print();*/
+
+
+	Array<String> st;
+	st.add("mama");
+	st.add("papa");
+	st.add("baba");
+	st.print();
+
+
+	Array<int> a(10);
+	a.set();
+	a.print();
+
+	Array<double> b(10);
+	b.set();
+	b.print();
+
+	
+
 	//12.04.2025
 
 
-	var a = 10;
+	/*var a = 10;
 	var b = "mama"; 
 	var c = 3.14;
 
@@ -49,8 +76,10 @@ int main()
 	b.print();
 	c.print();
 
-	a = "papa";
+	a = b;
+	a.print();
 
+	auto d = 5;*/
 
 	/*Array a(10);
 	a.set();
