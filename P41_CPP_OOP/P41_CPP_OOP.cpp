@@ -8,6 +8,9 @@
 #include "Fraction.h"
 #include "var.h"
 
+#include "Stack.h"
+#include "Calc.h"
+
 using namespace std;
 
 
@@ -38,6 +41,21 @@ enum class Color
 int main()
 {
 
+	Calc c("12-2*2*2+2");
+	cout << c.getResult() << endl;
+
+	/*Stack<int, 10> st;
+	st.push(10);
+	st.push(20);
+	st.push(30);
+	st.push(40);
+	st.push(50);
+	st.print();
+	Stack<int, 10> st2(st);
+	st2.print();*/
+
+
+
 	/*String st("mama");
 	cout << st << endl;
 	cin >> st;
@@ -48,7 +66,7 @@ int main()
 	a.print();*/
 
 
-	Array<String> st;
+	/*Array<String> st;
 	st.add("mama");
 	st.add("papa");
 	st.add("baba");
@@ -61,9 +79,8 @@ int main()
 
 	Array<double> b(10);
 	b.set();
-	b.print();
+	b.print();*/
 
-	
 
 	//12.04.2025
 
