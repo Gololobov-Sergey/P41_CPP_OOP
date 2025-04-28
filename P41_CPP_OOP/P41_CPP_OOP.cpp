@@ -10,6 +10,7 @@
 
 #include "Stack.h"
 #include "Calc.h"
+#include "Queue.h"
 
 using namespace std;
 
@@ -41,8 +42,15 @@ enum class Color
 int main()
 {
 
-	Calc c("12-2*2*2+2");
-	cout << c.getResult() << endl;
+
+	Queue<int> q = { 1,3,5,8,9 };
+	q.print();
+	q.ring();
+	q.print();
+		
+		
+	/*Calc c("12-2*2*2+2");
+	cout << c.getResult() << endl;*/
 
 	/*Stack<int, 10> st;
 	st.push(10);
