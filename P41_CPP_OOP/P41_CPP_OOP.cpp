@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <Windows.h>
 
 #include "Student.h"
 #include "Array.h"
@@ -11,6 +12,8 @@
 #include "Stack.h"
 #include "Calc.h"
 #include "Queue.h"
+#include "PriorityQueue.h"
+#include "PrintServer.h"
 
 using namespace std;
 
@@ -42,11 +45,45 @@ enum class Color
 int main()
 {
 
+	//03.05.2025
 
-	Queue<int> q = { 1,3,5,8,9 };
+	String fname[] = { "file1.doc", "file2.xls", "file3.txt", "file4.ppt", "file5.pdf" };
+
+	PrintServer ps("10.6.6.125");
+
+	int i = 0;
+	while (true)
+	{
+		if (i % 4 == 0)
+		{
+			ps.addTask(TaskPrint(fname[rand()%5], rand()%3 + 5, (DEPARTMENT)(rand()%4)));
+		}
+
+		ps.work();
+		i++;
+		Sleep(500);
+	}
+
+
+
+
+
+
+	/*PriorityQueue<int, int> pq;
+	pq.enqueue(10, 3);
+	pq.enqueue(20, 1);
+	pq.enqueue(30, 1);
+	pq.enqueue(40, 5);
+	pq.enqueue(50, 4);
+	pq.enqueue(60, 4);
+
+	pq.print();*/
+
+
+	/*Queue<int> q = { 1,3,5,8,9 };
 	q.print();
 	q.ring();
-	q.print();
+	q.print();*/
 		
 		
 	/*Calc c("12-2*2*2+2");

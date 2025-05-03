@@ -118,7 +118,7 @@ public:
 		return sum;
 	}
 
-	T max() const
+	/*T max() const
 	{
 		T max = arr[0];
 		for (size_t i = 1; i < size; i++)
@@ -142,7 +142,7 @@ public:
 			}
 		}
 		return min;
-	}
+	}*/
 
 	int count(T value) const
 	{
