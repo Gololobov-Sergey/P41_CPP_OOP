@@ -26,7 +26,7 @@ public:
 	T& peek();
 
 	void clear();
-	void print();
+	void print(int count = -1);
 	size_t length();
 
 };
@@ -127,13 +127,17 @@ void PriorityQueue<T, TPri>::clear()
 }
 
 template<class T, class TPri>
-void PriorityQueue<T, TPri>::print()
+void PriorityQueue<T, TPri>::print(int count)
 {
 	Node<T, TPri>* temp = first;
+	int i = 0;
 	while (temp)
 	{
-		cout << temp->value << " ";
+		cout << temp->value;
 		temp = temp->next;
+		i++;
+		if (i == count)
+			break;
 	}
 	cout << endl;
 }

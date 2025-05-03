@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cassert>
 #include "String.h"
+#include "func.h"
 
 using namespace std;
 
@@ -60,6 +61,17 @@ public:
 			cout << arr[i] << " ";
 		}
 		cout << endl;
+	}
+
+	void print(int x, int y, int count) const
+	{
+		int start = (size < count) ? 0 : size - count;
+		
+		for (int i = start; i < size; i++)
+		{
+			gotoxy(x, y++);
+			cout << arr[i];
+		}
 	}
 
 	void add(T value)

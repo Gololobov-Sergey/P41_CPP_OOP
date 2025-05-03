@@ -5,6 +5,7 @@
 #include "PriorityQueue.h"
 #include "String.h"
 #include "Array.h"
+#include "func.h"
 
 
 using namespace std;
@@ -24,6 +25,7 @@ ostream& operator<< (ostream& out, const DEPARTMENT& d)
 	case DEPARTMENT::ECONOMIST: out << "ECONOMIST"; break;
 	case DEPARTMENT::DIRECTOR:  out << "DIRECTOR"; break;
 	}
+	return out;
 }
 
 
@@ -34,6 +36,8 @@ class TaskPrint
 	DEPARTMENT department;
 
 public:
+	TaskPrint() {}
+
 	TaskPrint(String fName, size_t time, DEPARTMENT dept) : fileName(fName), time(time), department(dept) {	}
 
 	DEPARTMENT getDepartment()
@@ -67,6 +71,8 @@ class PrintServer
 
 	TaskPrint* currentTask = nullptr;
 
+	int count = 0;
+
 public:
 
 	PrintServer(String ip) : ip(ip)	{ }
@@ -94,6 +100,39 @@ public:
 		if (currentTask)
 		{
 			cout << *currentTask << endl;
+		}
+		else
+		{
+			cout << " " << endl;
+		}
+		cout << endl;
+
+		cout << "Waiting : " << qPrint.length() <<  endl;
+		cout << "---------------------------------" << endl;
+		qPrint.print(10);
+
+		gotoxy(40, 7);
+		cout << "Printed : ";
+		gotoxy(40, 8);
+		cout << "---------------------------------";
+		stats.print(40, 9, 10);
+
+		gotoxy(0, 20);
+		cout << "------------------------------------------------------------------------" << endl;
+		cout << "Total time : " << totalTime << " sec, count documets : " << count;
+
+
+		leftTime--;
+		if (leftTime == 0)
+		{
+			if (currentTask != nullptr)
+			{
+				totalTime += currentTask->getTime();
+				stats.add(*currentTask);
+			}
+			currentTask = nullptr;
+			leftTime = 0;
+			count++;
 		}
 	}
 };

@@ -134,6 +134,7 @@
     <ClInclude Include="Array.h" />
     <ClInclude Include="Calc.h" />
     <ClInclude Include="Fraction.h" />
+    <ClInclude Include="func.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="PrintServer.h" />
     <ClInclude Include="PriorityQueue.h" />
