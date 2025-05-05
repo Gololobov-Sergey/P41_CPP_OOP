@@ -15,6 +15,7 @@
 #include "PriorityQueue.h"
 #include "PrintServer.h"
 #include "ForwardList.h"
+#include <forward_list>
 
 using namespace std;
 
@@ -43,18 +44,35 @@ enum class Color
 	ORANGE
 };
 
+void mult2(int& elem)
+{
+	elem *= 2;
+}
+
 int main()
 {
 	//05.05.2025
 
-	ForwardList<int> fl = { 1,2,3,4,5 };
+	ForwardList<int> fl = { 14,12,34, 1, 4 };
 	fl.print();
-	fl.push_front(99);
+	/*fl.push_front(99);
 	fl.push_back(88);
 	fl.print();
 	fl.insert(77, 3);
 	fl.print();
 	fl.clear();
+	fl.print();*/
+	//fl.remove(1);
+	//fl.sort();
+
+	/*for (size_t i = 0; i < fl.length(); i++)
+	{
+		fl[i] *= 2;
+	}*/
+
+	fl.for_each(mult2);
+	//fl.for_each([](int& a){ a *= 2; });
+
 	fl.print();
 
 

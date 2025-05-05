@@ -10,8 +10,8 @@ template<class T>
 class ForwardList
 {
 	Node<T>* first = nullptr;
-	Node<T>* last  = nullptr;
-	size_t   size  = 0;
+	Node<T>* last = nullptr;
+	size_t   size = 0;
 
 	Node<T>* getNode(int index);
 
@@ -42,7 +42,12 @@ public:
 	void reverse();
 	void sort();
 
-	void for_each(void(*method)());
+	void for_each(void(*method)(T&));
+
+	size_t length();
+
+	ForwardList<T> operator+(const ForwardList<T>& list);
+
 };
 
 template<class T>
@@ -140,6 +145,85 @@ void ForwardList<T>::insert(T value, int index)
 }
 
 template<class T>
+void ForwardList<T>::pop_front()
+{
+	if (size > 0)
+	{
+		Node<T>* temp = first;
+		first = first->next;
+		delete temp;
+		size--;
+		if (size == 0)
+			last = nullptr;
+	}
+}
+
+template<class T>
+void ForwardList<T>::pop_back()
+{
+	if (size > 0)
+	{
+		if (size == 1)
+		{
+			delete first;
+			first = last = nullptr;
+		}
+		else
+		{
+			last = getNode(size - 2);
+			delete last->next;
+			last->next = nullptr;
+		}
+		size--;
+	}
+}
+
+template<class T>
+void ForwardList<T>::remove(int index)
+{
+	if (index == 0)
+	{
+		this->pop_front();
+	}
+	else if (index == size - 1)
+	{
+		this->pop_back();
+	}
+	else
+	{
+		Node<T>* pos = getNode(index - 1);
+		Node<T>* temp = pos->next;
+		pos->next = pos->next->next;
+		delete temp;
+		size--;
+	}
+}
+
+template<class T>
+T ForwardList<T>::front()
+{
+	return first->value;
+}
+
+template<class T>
+T ForwardList<T>::back()
+{
+	return last->value;
+}
+
+template<class T>
+T ForwardList<T>::at(int index)
+{
+	return getNode(index)->value;
+}
+
+template<class T>
+T& ForwardList<T>::operator[](int index)
+{
+	return getNode(index)->value;
+}
+
+template<class T>
 void ForwardList<T>::clear()
 {
 	Node<T>* temp = first;
@@ -163,4 +247,37 @@ void ForwardList<T>::print()
 		temp = temp->next;
 	}
 	cout << endl;
+}
+
+template<class T>
+void ForwardList<T>::sort()
+{
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		for (size_t j = 0; j < size - 1 - i; j++)
+		{
+			Node<T>* node = getNode(j);
+			if (node->value > node->next->value)
+			{
+				swap(node->value, node->next->value);
+			}
+		}
+	}
+}
+
+template<class T>
+void ForwardList<T>::for_each(void(*method)(T& elem))
+{
+	Node<T>* temp = first;
+	for (size_t i = 0; i < size; i++)
+	{
+		method(temp->value);
+		temp = temp->next;
+	}
+}
+
+template<class T>
+size_t ForwardList<T>::length()
+{
+	return size;
 }
