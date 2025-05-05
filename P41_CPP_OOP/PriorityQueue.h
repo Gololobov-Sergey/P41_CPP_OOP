@@ -14,6 +14,9 @@ class PriorityQueue
 	Node<T, TPri>* last  = nullptr;
 	size_t         size  = 0;
 
+	
+
+
 public:
 	PriorityQueue();
 	PriorityQueue(initializer_list<T> list);

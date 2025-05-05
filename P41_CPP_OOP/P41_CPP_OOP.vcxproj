@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClInclude Include="Array.h" />
     <ClInclude Include="Calc.h" />
+    <ClInclude Include="ForwardList.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="func.h" />
     <ClInclude Include="Node.h" />

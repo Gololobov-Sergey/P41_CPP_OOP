@@ -14,6 +14,7 @@
 #include "Queue.h"
 #include "PriorityQueue.h"
 #include "PrintServer.h"
+#include "ForwardList.h"
 
 using namespace std;
 
@@ -44,31 +45,22 @@ enum class Color
 
 int main()
 {
+	//05.05.2025
+
+	ForwardList<int> fl = { 1,2,3,4,5 };
+	fl.print();
+	fl.push_front(99);
+	fl.push_back(88);
+	fl.print();
+	fl.insert(77, 3);
+	fl.print();
+	fl.clear();
+	fl.print();
+
 
 	//03.05.2025
 
-	String fname[] = { "file1.doc", "file2.xls", "file3.txt", "file4.ppt", "file5.pdf" };
-
-	PrintServer ps("10.6.6.125");
-
-	int i = 0;
-	while (true)
-	{
-		if (i % 4 == 0)
-		{
-			ps.addTask(TaskPrint(fname[rand()%5], rand()%3 + 5, (DEPARTMENT)(rand()%4)));
-		}
-
-		ps.work();
-		i++;
-		Sleep(500);
-	}
-
-
-
-
-
-
+	
 	/*PriorityQueue<int, int> pq;
 	pq.enqueue(10, 3);
 	pq.enqueue(20, 1);

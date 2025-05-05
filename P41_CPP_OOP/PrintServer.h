@@ -139,3 +139,19 @@ public:
 
 
 
+//String fname[] = { "file1.doc", "file2.xls", "file3.txt", "file4.ppt", "file5.pdf" };
+//
+//PrintServer ps("10.6.6.125");
+//
+//int i = 0;
+//while (true)
+//{
+//	if (i % 4 == 0)
+//	{
+//		ps.addTask(TaskPrint(fname[rand() % 5], rand() % 3 + 5, (DEPARTMENT)(rand() % 4)));
+//	}
+//
+//	ps.work();
+//	i++;
+//	Sleep(500);
+//}
