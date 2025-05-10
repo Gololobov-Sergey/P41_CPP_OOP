@@ -136,6 +136,7 @@
     <ClInclude Include="ForwardList.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="func.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="PrintServer.h" />
     <ClInclude Include="PriorityQueue.h" />

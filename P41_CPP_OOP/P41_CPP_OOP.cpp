@@ -15,6 +15,7 @@
 #include "PriorityQueue.h"
 #include "PrintServer.h"
 #include "ForwardList.h"
+#include "List.h"
 #include <forward_list>
 
 using namespace std;
@@ -51,10 +52,29 @@ void mult2(int& elem)
 
 int main()
 {
+	//10.05.2025
+
+	List<int> l = { 1,2,3,4,5 };
+	/*l.push_back(99);
+	l.push_front(88);
+	l.print();
+	l.insert(77, 1);
+	l.print();
+	l.insert(66, 4);
+	l.print();
+	l.clear();
+	l.print();*/
+
+	l.remove(3);
+	l.print();
+
+
+
+
 	//05.05.2025
 
-	ForwardList<int> fl = { 14,12,34, 1, 4 };
-	fl.print();
+	//ForwardList<int> fl = { 14,12,34, 1, 4 };
+	//fl.print();
 	/*fl.push_front(99);
 	fl.push_back(88);
 	fl.print();
@@ -70,10 +90,10 @@ int main()
 		fl[i] *= 2;
 	}*/
 
-	fl.for_each(mult2);
+	//fl.for_each(mult2);
 	//fl.for_each([](int& a){ a *= 2; });
 
-	fl.print();
+	//fl.print();
 
 
 	//03.05.2025
