@@ -44,6 +44,10 @@ public:
 
 	friend ostream& operator<< (ostream& out, const String& obj);
 	friend istream& operator>> (istream& in, String& obj);
+
+	bool operator==(const String& obj) const;
+	bool operator>(const String& obj) const;
+	bool operator<(const String& obj) const;
 };
 
 int String::totalObjects = 0;
@@ -173,6 +177,33 @@ String String::operator+(const String& st)
 		temp[i + size] = st.str[i];
 	}
 	return String(temp);
+}
+
+bool String::operator==(const String& obj) const
+{
+	if (this == &obj)
+	{
+		return true;
+	}
+
+	for (size_t i = 0; i < size; i++)
+	{
+		if (str[i] != obj.str[i])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+inline bool String::operator>(const String& obj) const
+{
+	return strcmp(str, obj.str) > 0;
+}
+
+inline bool String::operator<(const String& obj) const
+{
+	return strcmp(str, obj.str) < 0;
 }
 
 

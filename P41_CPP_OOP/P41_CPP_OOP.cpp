@@ -17,6 +17,7 @@
 #include "ForwardList.h"
 #include "List.h"
 #include "BTree.h"
+#include "BasePolice.h"
 #include <forward_list>
 
 using namespace std;
@@ -37,14 +38,6 @@ enum class Fruit
 	PEAR
 };
 
-enum class Color
-{
-	RED,
-	GREEN,
-	BLUE,
-	YELLOW,
-	ORANGE
-};
 
 void mult2(int& elem)
 {
@@ -55,14 +48,22 @@ int main()
 {
 	//12.05.2025
 
-	BTree<int, int> bt;
+	BasePolice base;
+	base.addProtocol();
+	base.addProtocol();
+	base.addProtocol();
+	base.printAll();
+
+
+
+	/*BTree<int, int> bt;
 	bt.push_r(20, 20);
 	bt.push_r(10, 10);
 	bt.push_r(40, 40);
 	bt.push_r(5, 5);
 	bt.push_r(1, 1);
 	bt.push_r(30, 30);
-	bt.print();
+	bt.print();*/
 
 
 

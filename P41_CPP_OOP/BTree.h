@@ -13,7 +13,8 @@ struct BTreeNode
 	void print()
 	{
 		if (left != nullptr) left->print();
-		cout << value << " ";
+		//cout << value << " ";
+		value.print();
 		if (right != nullptr) right->print();
 	}
 
@@ -26,9 +27,9 @@ struct BTreeNode
 
 	TVal* getValue(const TKey& key)
 	{
-		if (key == this->key) return this->value;
-		else if (key < this->key && left != nullptr) left->getNode(key);
-		else if (key > this->key && right != nullptr) right->getNode(key);
+		if (key == this->key) return &this->value;
+		else if (key < this->key && left != nullptr) left->getValue(key);
+		else if (key > this->key && right != nullptr) right->getValue(key);
 		else return nullptr;
 	}
 };
