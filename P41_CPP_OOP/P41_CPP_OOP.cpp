@@ -16,6 +16,7 @@
 #include "PrintServer.h"
 #include "ForwardList.h"
 #include "List.h"
+#include "BTree.h"
 #include <forward_list>
 
 using namespace std;
@@ -52,9 +53,22 @@ void mult2(int& elem)
 
 int main()
 {
+	//12.05.2025
+
+	BTree<int, int> bt;
+	bt.push_r(20, 20);
+	bt.push_r(10, 10);
+	bt.push_r(40, 40);
+	bt.push_r(5, 5);
+	bt.push_r(1, 1);
+	bt.push_r(30, 30);
+	bt.print();
+
+
+
 	//10.05.2025
 
-	List<int> l = { 1,2,3,4,5 };
+	//List<int> l = { 1,2,3,4,5 };
 	/*l.push_back(99);
 	l.push_front(88);
 	l.print();
@@ -65,8 +79,8 @@ int main()
 	l.clear();
 	l.print();*/
 
-	l.remove(3);
-	l.print();
+	//l.remove(3);
+	//l.print();
 
 
 
