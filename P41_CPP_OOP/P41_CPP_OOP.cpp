@@ -19,13 +19,15 @@
 #include "BTree.h"
 #include "BasePolice.h"
 #include <forward_list>
+#include "Relation.h"
+#include "Inherit.h"
 
 using namespace std;
 
 
 void print(String a)
 {
-	cout << a.get() << endl;	
+	cout << a.get() << endl;
 }
 
 
@@ -46,6 +48,48 @@ void mult2(int& elem)
 
 int main()
 {
+
+	//17.05.2025
+
+
+	Human h("Vasya", 30);
+	h.info();
+
+	FootbalPlayer fp;
+	
+	fp.info();
+
+
+
+
+
+	/*{
+		Car1 car1;
+	}*/
+
+
+
+	/*Engine1* engine = new Engine1;
+	Car2 car2(engine);
+	car2.info();
+
+	STO sto;
+	sto.setEngineToStend(car2.getEngine());
+	sto.upPower(60);
+	car2.info();
+
+	car2.setEngine(sto.getEngine());
+	car2.info();*/
+
+
+
+
+
+	/*Engine1* engine2 = new Engine1;
+	car2.getEngine(engine2);*/
+
+
+
 	//12.05.2025
 
 	/*BasePolice base;
@@ -113,7 +157,7 @@ int main()
 
 	//03.05.2025
 
-	
+
 	/*PriorityQueue<int, int> pq;
 	pq.enqueue(10, 3);
 	pq.enqueue(20, 1);
@@ -129,8 +173,8 @@ int main()
 	q.print();
 	q.ring();
 	q.print();*/
-		
-		
+
+
 	/*Calc c("12-2*2*2+2");
 	cout << c.getResult() << endl;*/
 
@@ -176,7 +220,7 @@ int main()
 
 
 	/*var a = 10;
-	var b = "mama"; 
+	var b = "mama";
 	var c = 3.14;
 
 	a.print();
@@ -193,7 +237,7 @@ int main()
 	a.print();
 
 	a[5] = 999;
-	
+
 	cout << a[3] << endl;
 	cout << a["one"] << endl;
 	a.print();
@@ -282,7 +326,7 @@ int main()
 
 
 
-	
+
 	//int a;
 	//a++;
 	//++a;
@@ -298,7 +342,7 @@ int main()
 	Reservoir r3 = r1;
 	r3.print();*/
 
-	
+
 
 
 	//String s1("Black Sea");
@@ -310,7 +354,7 @@ int main()
 
 	/*Fruit f = Fruit::APPLE;
 	Color c = Color::RED;
-	
+
 	switch (f)
 	{
 	case Fruit::APPLE:
@@ -375,7 +419,7 @@ int main()
 	////print(10);
 	//a1.print();
 
-	
+
 
 	//cout << Student::totalObjects << endl;
 	//{
