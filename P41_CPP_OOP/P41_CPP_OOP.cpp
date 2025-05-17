@@ -48,11 +48,11 @@ int main()
 {
 	//12.05.2025
 
-	BasePolice base;
+	/*BasePolice base;
 	base.addProtocol();
 	base.addProtocol();
 	base.addProtocol();
-	base.printAll();
+	base.printAll();*/
 
 
 
