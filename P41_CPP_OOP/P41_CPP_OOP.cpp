@@ -21,6 +21,7 @@
 #include <forward_list>
 #include "Relation.h"
 #include "Inherit.h"
+#include "Passport.h"
 
 using namespace std;
 
@@ -52,14 +53,31 @@ int main()
 	//17.05.2025
 
 
-	Human h("Vasya", 30);
+	/*Human h("Vasya", 30);
 	h.info();
-
-	FootbalPlayer fp;
 	
-	fp.info();
+
+	FootbalPlayer fp("Ronaldo", 38, 7);
+
+	fp.info();*/
+	
+
+	/*UkrainianPassport passport1("Ivan", "Ivan", "Ivan", "01.09.1839", "AZ7777EU", "19.05.2025");
+
+	passport1.info();
+
+	UkrainianForeignPassport passport2("Amerika", "Comes", "01.09.2013", "US$$$$US", "19.05.2025");
+
+	passport2.info();
+
+	passport2.addVisa();
+
+	passport2.showVisa();*/
 
 
+	/*A a;
+	B b;*/
+	
 
 
 
@@ -169,10 +187,12 @@ int main()
 	pq.print();*/
 
 
-	/*Queue<int> q = { 1,3,5,8,9 };
-	q.print();
-	q.ring();
-	q.print();*/
+	//PriorityQueue<int, int> q; // = { 1,3,5,8,9 };
+	//q.enqueue(30, 3);
+	//q.enqueue(10, 1);
+	//q.enqueue(20, 2);
+	//q.enqueue(40, 4);
+	//q.print();
 
 
 	/*Calc c("12-2*2*2+2");
