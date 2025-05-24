@@ -22,6 +22,8 @@
 #include "Relation.h"
 #include "Inherit.h"
 #include "Passport.h"
+#include "Animal.h"
+#include "Shape.h"
 
 using namespace std;
 
@@ -50,8 +52,67 @@ void mult2(int& elem)
 int main()
 {
 
-	//17.05.2025
+	//24.05.2025
 
+	Shape* c = new Circle(3.5, 5.7, 20);
+	c->info();
+	cout << "Area = " << c->area() << endl;
+
+	/*{
+		Animal* a = new Cat("Tom", 3);
+		delete a;
+	}*/
+	/*cout << c.getType() << endl;
+	c.info();
+	cout << c.voice() << endl;
+
+	Animal& rc = c;
+	cout << rc.getType() << endl;
+	rc.info();
+	cout << rc.voice() << endl;*/
+
+	//Animal* pa = new Animal("xxxx", 3);
+
+	//Animal* pc = new Cat("Tom", 3);
+	/*cout << pc->getType() << endl;
+	pc->info();
+	cout << pc->voice() << endl;*/
+
+	//cout << endl;
+
+	//Animal* pd = new Dog("Spike", 5);
+	/*cout << pd->getType() << endl;
+	pd->info();
+	cout << pd->voice() << endl;*/
+
+	/*Animal* pp = new Parrot("Kesha", 1);
+
+	Animal* sc = new SiamCat("Murka", 4);
+
+	Animal* an[] = { pc, pd, pp, sc };
+
+
+	for (size_t i = 0; i < 4; i++)
+	{
+		cout << an[i]->getType() << endl;
+		an[i]->info();
+		cout << an[i]->voice() << endl;
+		cout << endl;
+	}*/
+
+
+	/*Cat c1("c", 2);
+	Dog d1("d", 3);
+	Animal an1[] = { c1, d1 };
+	for (size_t i = 0; i < 2; i++)
+	{
+		cout << an1[i].getType() << endl;
+		an1[i].info();
+		cout << an1[i].voice() << endl;
+		cout << endl;
+	}*/
+
+	//17.05.2025
 
 	/*Human h("Vasya", 30);
 	h.info();
@@ -176,8 +237,8 @@ int main()
 	//03.05.2025
 
 
-	/*PriorityQueue<int, int> pq;
-	pq.enqueue(10, 3);
+	/*BaseQueue<int, int> pq;
+	pq.enqueue(10);
 	pq.enqueue(20, 1);
 	pq.enqueue(30, 1);
 	pq.enqueue(40, 5);

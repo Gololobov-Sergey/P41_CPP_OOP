@@ -22,6 +22,8 @@ public:
 	BaseQueue& operator=(const BaseQueue& obj);
 	~BaseQueue();
 
+
+
 	void dequeue();
 	T& peek();
 
