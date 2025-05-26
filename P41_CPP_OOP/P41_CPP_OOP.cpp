@@ -24,6 +24,7 @@
 #include "Passport.h"
 #include "Animal.h"
 #include "Shape.h"
+#include "WarOfWorld.h"
 
 using namespace std;
 
@@ -52,11 +53,20 @@ void mult2(int& elem)
 int main()
 {
 
+	/*Light* sw = new Swordsman(50, 90);
+	cout << sw << endl;*/
+	
+
+	WarOfWorld war(5);
+	war.game();
+
+
+
 	//24.05.2025
 
-	Shape* c = new Circle(3.5, 5.7, 20);
+	/*Shape* c = new Circle(3.5, 5.7, 20);
 	c->info();
-	cout << "Area = " << c->area() << endl;
+	cout << "Area = " << c->area() << endl;*/
 
 	/*{
 		Animal* a = new Cat("Tom", 3);

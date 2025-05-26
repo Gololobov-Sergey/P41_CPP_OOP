@@ -29,6 +29,7 @@ public:
 
 	void clear();
 	void print(int count = -1);
+	void print(int x, int y, int count = -1);
 	size_t length();
 
 	void ring();
@@ -106,6 +107,23 @@ void BaseQueue<T, TPri>::print(int count)
 	int i = 0;
 	while (temp)
 	{
+		cout << temp->value;
+		temp = temp->next;
+		i++;
+		if (i == count)
+			break;
+	}
+	cout << endl;
+}
+
+template<class T, class TPri>
+inline void BaseQueue<T, TPri>::print(int x, int y, int count)
+{
+	Node<T, TPri>* temp = first;
+	int i = 0;
+	while (temp)
+	{
+		gotoxy(x, y++);
 		cout << temp->value;
 		temp = temp->next;
 		i++;

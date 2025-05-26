@@ -33,8 +33,9 @@ public:
 	T& operator[](int index);
 
 	void print();
+	void print(int x, int y);
 	void clear();
-
+	int length() const;
 
 };
 
@@ -246,7 +247,20 @@ void List<T>::print()
 	Node<T>* temp = first;
 	while (temp)
 	{
-		cout << temp->value << " ";
+		cout << temp->value;// << " ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+template<class T>
+inline void List<T>::print(int x, int y)
+{
+	Node<T>* temp = first;
+	while (temp)
+	{
+		gotoxy(x, y++);
+		cout << temp->value;// << " ";
 		temp = temp->next;
 	}
 	cout << endl;
@@ -264,4 +278,10 @@ void List<T>::clear()
 	}
 	first = last = nullptr;
 	size = 0;
+}
+
+template<class T>
+int List<T>::length() const
+{
+	return size;
 }
