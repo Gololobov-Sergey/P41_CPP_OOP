@@ -25,6 +25,7 @@
 #include "Animal.h"
 #include "Shape.h"
 #include "WarOfWorld.h"
+#include "Logger.h"
 
 using namespace std;
 
@@ -45,20 +46,78 @@ enum class Fruit
 };
 
 
+void print(IPrintable* obj)
+{
+	obj->print();
+}
+
+
 void mult2(int& elem)
 {
 	elem *= 2;
 }
 
+void division(int a, int b, ILogger* log)
+{
+	if (b == 0)
+	{
+		log->logError("Division by zero!");
+		return;
+	}
+
+	cout << (double)a / b << endl;
+}
+
+
 int main()
 {
+
+
+	/*Реализовать следующую систему классов :
+	Класс “Компьютер”.Поля : название, объем оперативной памяти, название
+	видеокарты.
+	Класс “Сервер”.Поля : количество ядер в процессоре, количество каналов
+	связи с интернет, особенности(строка).
+	Класс “Персональный компьютер” – наследуется от класса «Компьютер».
+	Поля : наличие звука, название звуковой карты.Тип мыши(мышь / трекбол).
+	Класс “Ноутбук” – наследуется от класса «Компьютер».Поля : диагональ
+	дисплея, время жизни батареи, вес.
+	Класс “Переносной сервер” – наследуется от “Сервер” и “Ноутбук”.Поля :
+	наличие доступа в интернет, название сервера, название операционной системы.
+	Используются : виртуальные функции вывода данных, параметризованные
+	конструкторы, деструктор.*/
+
+
+
+
+
+
+	/*Router r(123);
+	cout << r.LAN::getID() << endl;
+	cout << r.WiFi::getID() << endl;*/
+
+	Animal* a = new Cat("Tom", 3);
+	Cat* c = dynamic_cast<Cat*>(a);
+	if(c)
+		cout << c->getMouse() << endl;
+	
+
+
+	//int a = 9, b = 0;
+
+	//ConsoleLogger* clog = new ConsoleLogger();
+
+	//FileLogger* flog = new FileLogger("log.txt");
+
+	//division(a, b, new FileLogger("log.txt"));
+
 
 	/*Light* sw = new Swordsman(50, 90);
 	cout << sw << endl;*/
 	
 
-	WarOfWorld war(5);
-	war.game();
+	/*WarOfWorld war(5);
+	war.game();*/
 
 
 

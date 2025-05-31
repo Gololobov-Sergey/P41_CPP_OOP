@@ -143,6 +143,7 @@
     <ClInclude Include="func.h" />
     <ClInclude Include="Inherit.h" />
     <ClInclude Include="List.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Passport.h" />

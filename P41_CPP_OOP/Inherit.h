@@ -82,3 +82,42 @@ public:
 		aa();
 	}
 };
+
+
+
+
+class Device
+{
+protected:
+	int id;
+
+public:
+	Device(int id) : id(id) {}
+};
+
+
+class LAN : virtual public Device
+{
+
+public:
+	LAN(int id) : Device(id){}
+
+	int getID() { return id; }
+};
+
+
+class WiFi : virtual public Device
+{
+
+public:
+	WiFi(int id) : Device(id) {}
+
+	int getID() { return id; }
+};
+
+
+class Router : public LAN, public WiFi
+{
+public:
+	Router(int id) : LAN(id), WiFi(id), Device(id) {}
+};

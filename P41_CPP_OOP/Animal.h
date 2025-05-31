@@ -4,6 +4,17 @@
 
 using namespace std;
 
+
+class IPrintable
+{
+public:
+	virtual ~IPrintable() {}
+
+	virtual void print() = 0;
+};
+
+
+
 class Animal
 {
 	string name;
@@ -26,6 +37,7 @@ public:
 	}
 
 	virtual string voice() = 0;
+
 };
 
 
@@ -34,8 +46,10 @@ string Animal::voice()
 	return "No voice";
 }
 
-class Cat /*final*/: public Animal
+class Cat /*final*/: public Animal, public IPrintable
 {
+	int mouse = 5;
+
 public:
 	Cat(string n, int a) : Animal(n, a) {}
 
@@ -46,9 +60,20 @@ public:
 		return "Cat";
 	}
 
+	virtual int getMouse()
+	{
+		return mouse;
+	}
+
 	virtual string voice() override /*final*/
 	{
 		return "Mau Mau";
+	}
+
+	virtual void print() override
+	{
+		cout << getType() << endl;
+		cout << voice() << endl;
 	}
 };
 
