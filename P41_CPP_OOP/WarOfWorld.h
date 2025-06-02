@@ -49,6 +49,10 @@ public:
 		return hp;
 	}
 
+	/// <summary>
+	/// ;lei f'weiofqpoweifpqoweif [powiefwef
+	/// </summary>
+	/// <returns>wqe rqwe rwer</returns>
 	int getDamage()
 	{
 		return damage;
@@ -59,6 +63,10 @@ public:
 		this->hp = hp;
 	}
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="damage"></param>
 	void setDamage(int damage)
 	{
 		this->damage = damage;
@@ -257,6 +265,9 @@ public:
 			Skill* skill = war1->getSkill();
 			if(skill)
 				skill->execute(war2);
+
+			war1->getDamage();
+
 			return war1;
 		}
 		else if (true)

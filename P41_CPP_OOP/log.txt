@@ -1,2 +1,4 @@
 Division by zero!
 Division by zero!
+Jun  2 2025 | Jun  2 2025 | C:\Users\gololobov\source\repos\P41_CPP_OOP\P41_CPP_OOP\P41_CPP_OOP.cpp | 82 | Division by zero, b = 0
+Jun  2 2025 | 20:06:02 | C:\Users\gololobov\source\repos\P41_CPP_OOP\P41_CPP_OOP\P41_CPP_OOP.cpp | 82 | Division by zero, b = 0

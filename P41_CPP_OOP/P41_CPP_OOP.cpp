@@ -26,13 +26,15 @@
 #include "Shape.h"
 #include "WarOfWorld.h"
 #include "Logger.h"
+#include "Namespace.h"
+#include "MyException.h"
 
 using namespace std;
 
 
 void print(String a)
 {
-	cout << a.get() << endl;
+	std::cout << a.get() << std::endl;
 }
 
 
@@ -68,9 +70,73 @@ void division(int a, int b, ILogger* log)
 	cout << (double)a / b << endl;
 }
 
+//using namespace Foo;
+//using namespace Boo;
+
+//namespace Moo = Foo::Doo;
+
+
+double division(int a, int b)
+{
+	if (b == 0)
+		//throw MyException(__DATE__, __TIME__, __FILE__, __LINE__, "Division by zero, b = 0") ;
+		throw out_of_range("Division by zero, b = 0");
+	return (double)a/b;
+}
+
 
 int main()
 {
+
+	int a, b;
+	cin >> a >> b;
+	
+	try
+	{
+		cout << division(a,b) << endl;
+	}
+	catch (MyException& e)
+	{
+		cout << e.getError() << endl;
+		e.saveError();
+	}
+	catch (out_of_range& e)
+	{
+		cout << e.what() << endl;
+	}
+	catch (exception& e)
+	{
+		cout << e.what() << endl;
+	}
+	catch (const char* e)
+	{
+		cout << e << endl;
+	}
+	catch (...)
+	{
+		cout << "Fatal error" << endl;
+	}
+	
+	for (size_t i = 0; i < length; i++)
+	{
+
+	}
+
+	/*Foo::foo();
+	Boo::foo();
+
+	Foo::Doo::foo();
+	Moo::foo();
+
+	using std::cout;*/
+
+	
+	/*string pass;
+	cin >> pass;
+	hash<string> h;
+	cout << h(pass) << endl;*/
+
+
 
 
 	/*Реализовать следующую систему классов :
@@ -90,16 +156,14 @@ int main()
 
 
 
-
-
 	/*Router r(123);
 	cout << r.LAN::getID() << endl;
 	cout << r.WiFi::getID() << endl;*/
 
-	Animal* a = new Cat("Tom", 3);
+	/*Animal* a = new Cat("Tom", 3);
 	Cat* c = dynamic_cast<Cat*>(a);
 	if(c)
-		cout << c->getMouse() << endl;
+		cout << c->getMouse() << endl;*/
 	
 
 

@@ -21,3 +21,4 @@ void SetColor(int text, int background)
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
 }
+

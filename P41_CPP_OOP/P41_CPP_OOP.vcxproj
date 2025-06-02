@@ -145,6 +145,8 @@
     <ClInclude Include="List.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="MyException.h" />
+    <ClInclude Include="Namespace.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Passport.h" />
     <ClInclude Include="PrintServer.h" />
