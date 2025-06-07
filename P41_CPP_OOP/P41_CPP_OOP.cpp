@@ -28,6 +28,8 @@
 #include "Logger.h"
 #include "Namespace.h"
 #include "MyException.h"
+#include <array>
+#include <vector>
 
 using namespace std;
 
@@ -85,10 +87,141 @@ double division(int a, int b)
 }
 
 
+bool asc(int a, int b)
+{
+	return a > b;
+}
+
+//bool desc(int a, int b)
+//{
+//	return a < b;
+//}
+
+
+class Calc1
+{
+public:
+	int operator()(int a, int b)
+	{
+		return a + b;
+	}
+};
+
+
+template<class Container>
+void print(Container cont)
+{
+	for (auto el : cont)
+	{
+		cout << el << " ";
+	}
+	cout << endl;
+}
+
 int main()
 {
 
-	int a, b;
+
+	// 07.06.2025
+
+	/*array<int, 10> arr = { 15,34,8,0,7,54,2,23,67,90 };
+
+	printArray(arr.data(), 10);
+
+	for (auto el : arr)
+	{
+		cout << el << " ";
+	}
+	cout << endl;
+
+	auto e = arr.begin();
+	e += 2;
+	cout << *e << endl;
+	cout << arr[2] << endl;
+
+	cout << arr.max_size() << endl;*/
+
+
+
+	vector<int> v = { 1,23,4,7,9,8,6,4,3 };
+	vector<int> v2 = { 1,2,3,4,5,6,7,8 };
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+	cout << v.max_size() << endl;
+
+	//v.insert(v.begin() + 3, 99);
+	//v.insert(v.begin() + 3, v2.begin(), v2.begin() + 4);
+	v.insert(v.begin() + 3, {7,7,7,7});
+	
+	print(v);
+
+	vector<Circle> vsh;
+	vsh.push_back(Circle(2, 4, 7));
+	vsh.push_back(Circle(5, 6, 2));
+	vsh.push_back(Circle(7, 4, 7));
+
+	/*for (auto el : vsh)
+	{
+		el.info();
+	}
+	cout << endl;*/
+
+	//vsh.insert(vsh.begin() + 1, new Circle(9, 9, 9));
+	vsh.emplace(vsh.begin() + 1, 9, 9, 9);
+
+	for (auto el : vsh)
+	{
+		el.info();
+	}
+	cout << endl;
+
+	erase_if(vsh, [](Circle c) { return c.getRadius() == 7; });
+
+	cout << "--------------------" << endl;
+	for (auto el : vsh)
+	{
+		el.info();
+	}
+	cout << endl;
+
+
+	/*v.push_back(10);
+	v.push_back(10);
+	v.push_back(10);
+	v.push_back(10);
+	v.push_back(10);
+	v.push_back(10);
+	v.push_back(10);
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;
+
+	v.shrink_to_fit();
+	cout << v.size() << endl;
+	cout << v.capacity() << endl;*/
+
+
+	/*bubbleSort(arr.data(), 10, new Desc());
+	bubbleSort(arr.data(), 10, [](int a, int b) {return a > b; });
+
+	printArray(arr.data(), 10);*/
+
+	/*int a = 10, b = 5, c = 15;
+	auto f = [=, &b](int& a) { cout << ++a << " " << ++b << " " << c << endl; };
+	f(a);
+	cout << a << endl;
+
+	auto ff = [](int a)->int {
+		if (a == 5)
+			return 10;
+		if (a == 10)
+			return 5.5;
+		};*/
+
+
+	/*Calc1 calc;
+	cout << calc(3, 5) << endl;*/
+
+	/*int a, b;
 	cin >> a >> b;
 	
 	try
@@ -120,7 +253,7 @@ int main()
 	for (size_t i = 0; i < length; i++)
 	{
 
-	}
+	}*/
 
 	/*Foo::foo();
 	Boo::foo();

@@ -22,3 +22,68 @@ void SetColor(int text, int background)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
 }
 
+
+
+class Comparer
+{
+public:
+	virtual bool operator()(int a, int b) = 0;
+};
+
+class Asc : public Comparer
+{
+public:
+	bool operator()(int a, int b)
+	{
+		return a > b;
+	}
+};
+
+class Desc : public Comparer
+{
+public:
+	bool operator()(int a, int b)
+	{
+		return a < b;
+	}
+};
+
+
+//template<class T>
+void bubbleSort(int* arr, int size, bool(*method)(int, int))
+{
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		for (size_t j = 0; j < size - 1 - i; j++)
+		{
+			if (method(arr[j], arr[j + 1]))
+			{
+				swap(arr[j], arr[j + 1]);
+			}
+		}
+	}
+}
+
+void bubbleSort(int* arr, int size, Comparer* method)
+{
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		for (size_t j = 0; j < size - 1 - i; j++)
+		{
+			if (method->operator()(arr[j], arr[j + 1]))
+			{
+				swap(arr[j], arr[j + 1]);
+			}
+		}
+	}
+}
+
+template<class T>
+void printArray(const T* arr, int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}

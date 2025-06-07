@@ -35,4 +35,9 @@ public:
 		Shape::info();
 		cout << "Radius : " << radius << endl;
 	}
+
+	int getRadius()
+	{
+		return radius;
+	}
 };
