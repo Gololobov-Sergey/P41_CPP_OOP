@@ -48,6 +48,8 @@ public:
 	bool operator==(const String& obj) const;
 	bool operator>(const String& obj) const;
 	bool operator<(const String& obj) const;
+
+	char& operator[](int index);
 };
 
 int String::totalObjects = 0;
@@ -206,6 +208,11 @@ inline bool String::operator<(const String& obj) const
 	return strcmp(str, obj.str) < 0;
 }
 
+inline char& String::operator[](int index)
+{
+	return str[index];
+}
+
 
 ostream& operator<< (ostream& out, const String& obj)
 {
@@ -222,3 +229,13 @@ inline istream& operator>>(istream& in, String& obj)
 
 	return in;
 }
+
+
+class StringComparer
+{
+public:
+	bool operator()(const String& s1, const String& s2)
+	{
+		return s1.length() < s2.length();
+	}
+};

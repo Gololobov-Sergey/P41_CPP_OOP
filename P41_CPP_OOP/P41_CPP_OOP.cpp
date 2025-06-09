@@ -30,6 +30,10 @@
 #include "MyException.h"
 #include <array>
 #include <vector>
+#include <stack>
+#include <queue>
+#include <list>
+#include <map>
 
 using namespace std;
 
@@ -121,6 +125,68 @@ void print(Container cont)
 int main()
 {
 
+	// 09.06.2025
+
+
+	/*map<String, int> m;
+	m["mama"] = 1;
+	m.insert(pair<String, int>("papa", 3));
+	m.insert(make_pair<String, int>("mama", 1));
+	for (auto p : m)
+	{
+		cout << p.first << " " << p.second << endl;
+	}*/
+
+
+	ifstream f("log.txt");
+	string s;
+	while (f >> s)
+	{
+		cout << s << endl;
+	}
+
+
+
+
+	//list<String> l = {"mama", "pap", "bababa"};
+	//
+
+	//auto it = l.begin();
+	//advance(it, 2);
+	////l.insert(it, String("deda"));
+
+	//l.insert(next(l.begin(), 2), String("deda"));
+	//l.emplace_back("detka");
+	//
+	////erase_if(l, [](String& s) {return s[1] == 'a'; });
+	////l.remove_if([](String& s) {return s[1] == 'a'; });
+
+	//print(l);
+
+	//l.sort();
+	////l.sort(StringComparer());
+	//print(l);
+
+	/*stack<int> s;
+
+	PriorityQueue<Student, int> pq1;
+	Student s1(1, "Vasya", 15, 99);
+	Student s2(2, "Petya", 18, 99);
+	pq1.enqueue(s1, s1.getAge());
+	pq1.enqueue(s2, s2.getAge());
+
+	pq1.peek().print();
+
+
+
+	priority_queue <String, vector<String>, StringComparer> pq2;
+	pq2.push(String("mama"));
+	pq2.push(String("mamama"));
+	pq2.push(String("pap"));
+
+	cout << pq2.top() << endl;*/
+
+
 
 	// 07.06.2025
 
@@ -143,46 +209,46 @@ int main()
 
 
 
-	vector<int> v = { 1,23,4,7,9,8,6,4,3 };
-	vector<int> v2 = { 1,2,3,4,5,6,7,8 };
-	cout << v.size() << endl;
-	cout << v.capacity() << endl;
-	cout << v.max_size() << endl;
+	//vector<int> v = { 1,23,4,7,9,8,6,4,3 };
+	//vector<int> v2 = { 1,2,3,4,5,6,7,8 };
+	//cout << v.size() << endl;
+	//cout << v.capacity() << endl;
+	//cout << v.max_size() << endl;
 
-	//v.insert(v.begin() + 3, 99);
-	//v.insert(v.begin() + 3, v2.begin(), v2.begin() + 4);
-	v.insert(v.begin() + 3, {7,7,7,7});
-	
-	print(v);
+	////v.insert(v.begin() + 3, 99);
+	////v.insert(v.begin() + 3, v2.begin(), v2.begin() + 4);
+	//v.insert(v.begin() + 3, {7,7,7,7});
+	//
+	//print(v);
 
-	vector<Circle> vsh;
-	vsh.push_back(Circle(2, 4, 7));
-	vsh.push_back(Circle(5, 6, 2));
-	vsh.push_back(Circle(7, 4, 7));
+	//vector<Circle> vsh;
+	//vsh.push_back(Circle(2, 4, 7));
+	//vsh.push_back(Circle(5, 6, 2));
+	//vsh.push_back(Circle(7, 4, 7));
 
-	/*for (auto el : vsh)
-	{
-		el.info();
-	}
-	cout << endl;*/
+	///*for (auto el : vsh)
+	//{
+	//	el.info();
+	//}
+	//cout << endl;*/
 
-	//vsh.insert(vsh.begin() + 1, new Circle(9, 9, 9));
-	vsh.emplace(vsh.begin() + 1, 9, 9, 9);
+	////vsh.insert(vsh.begin() + 1, new Circle(9, 9, 9));
+	//vsh.emplace(vsh.begin() + 1, 9, 9, 9);
 
-	for (auto el : vsh)
-	{
-		el.info();
-	}
-	cout << endl;
+	//for (auto el : vsh)
+	//{
+	//	el.info();
+	//}
+	//cout << endl;
 
-	erase_if(vsh, [](Circle c) { return c.getRadius() == 7; });
+	//erase_if(vsh, [](Circle c) { return c.getRadius() == 7; });
 
-	cout << "--------------------" << endl;
-	for (auto el : vsh)
-	{
-		el.info();
-	}
-	cout << endl;
+	//cout << "--------------------" << endl;
+	//for (auto el : vsh)
+	//{
+	//	el.info();
+	//}
+	//cout << endl;
 
 
 	/*v.push_back(10);

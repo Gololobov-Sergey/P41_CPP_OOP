@@ -49,6 +49,16 @@ public:
 		totalObjects--;
 	}
 
+	Student& operator=(const Student& obj)
+	{
+		if(this == &obj) return *this;
+
+		
+
+
+		return *this;
+	}
+
 	void setAge(int a)
 	{
 		if (a < 10 || a > 50)
@@ -56,7 +66,7 @@ public:
 		age = a;
 	}
 
-	int getAge()
+	int getAge() const
 	{
 		return age;
 	}
@@ -71,7 +81,7 @@ public:
 		return name.get();
 	}
 
-	void print()
+	void print() const
 	{
 		cout << "ID  : " << id << endl;
 		cout << "Name: " << name.get() << endl;
@@ -107,3 +117,13 @@ public:
 int Student::planet = 3;
 
 int Student::totalObjects = 0;
+
+
+class StudentComparer
+{
+public:
+	bool operator()(const Student& s1, const Student& s2)
+	{
+		return s1.getAge() > s2.getAge();
+	}
+};
