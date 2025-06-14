@@ -33,7 +33,7 @@ public:
 
 	Student(int i, const char* n, int a, int c) : count{ c }, id(i)
 	{
-		cout << "Constructor 3 param" << endl;
+		//cout << "Constructor 3 param" << endl;
 		setName(n);
 		setAge(a);
 
@@ -42,12 +42,25 @@ public:
 
 	~Student()
 	{
-		cout << "Destructor" << endl;
+		//cout << "Destructor" << endl;
 		/*if (name != nullptr)
 			delete[] name;*/
 
 		totalObjects--;
 	}
+
+
+	/*Student(const Student& obj) : count(obj.count)
+	{
+
+	}
+
+	Student(Student&& obj) : count(obj.count)
+	{
+
+		int a;
+
+	}*/
 
 	Student& operator=(const Student& obj)
 	{

@@ -34,6 +34,8 @@
 #include <queue>
 #include <list>
 #include <map>
+#include <algorithm>
+#include "SmartPointer.h"
 
 using namespace std;
 
@@ -122,8 +124,101 @@ void print(Container cont)
 	cout << endl;
 }
 
+
+void Funk()
+{
+	SmartPointer<Student> st(new Student(22, "Vasya", 20, 22));
+
+	st->getAge();
+
+	int a;
+	cin >> a;
+	if (a == 0)
+		return;
+		// throw ;
+
+
+
+	//delete st;
+}
+
+Student createStudent()
+{
+	//Student st(22, "Vasya", 20, 22);
+	return Student(22, "Vasya", 20, 22);
+}
+
+
+void Funk2(Student&& s)
+{
+
+}
+
 int main()
 {
+
+	// 14.06.2025
+
+	vector<int> v = { 3,45,6,-8,90 };
+	/*for_each(v.begin(), v.end(), [](int& a) { a *= 2; });
+	for_each(v.begin(), v.end(), [](int a) { cout << a << " "; });
+	cout << endl;
+
+	cout << all_of(v.begin(), v.end(), [](int a) { return a > 0; }) << endl;
+	cout << any_of(v.begin(), v.end(), [](int a) { return a > 0; }) << endl;*/
+
+	remove_if(v.begin(), v.end(), [](int a) { return a > 0; });
+	print(v);
+
+
+	/*vector<Student> v = {
+		Student(22, "Vasya", 20, 22) ,
+		Student(22, "Petya", 23, 22) ,
+		Student(22, "Kolya", 18, 22) ,
+		Student(22, "Fedya", 19, 22)
+	};*/
+
+	//cout << all_of(v.begin(), v.end(), [](Student s) { return s.getAge() > 20; }) << endl;
+
+
+	/*auto it = find_if(v.begin(), v.end(), [](Student s) { return s.getAge() > 29; });
+	if (it != v.end())
+	{
+		cout << it->getName() << endl;
+	}*/
+
+	//cout << count_if(v.begin(), v.end(), [](Student s) { return s.getAge() > 20; }) << endl;
+
+	//erase_if(v, [](Student& s) { return s.getAge() > 20; });
+
+	//for_each(v.begin(), v.end(), [](Student& s) { cout << s.getName() << endl; });
+
+
+
+	/*Student st = createStudent();
+
+	int a = 5;
+	int&& r = 55;
+	Funk2(Student(22, "Vasya", 20, 22));
+
+	unique_ptr<Student> p = make_unique<Student>(22, "Vasya", 20, 22);
+
+	unique_ptr<Student> p1 = move(p);
+
+	p1->addMark(10);
+
+	shared_ptr<Student> s = make_shared<Student>(22, "Vasya", 20, 22);
+	{
+		shared_ptr<Student> s1 = s;
+		cout << s1->getName();
+	}
+
+	cout << s->getName() << endl;*/
+
+	
+
+
+	//p = p1;
 
 	// 09.06.2025
 
@@ -138,12 +233,12 @@ int main()
 	}*/
 
 
-	ifstream f("log.txt");
+	/*ifstream f("log.txt");
 	string s;
 	while (f >> s)
 	{
 		cout << s << endl;
-	}
+	}*/
 
 
 

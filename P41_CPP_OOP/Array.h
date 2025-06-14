@@ -39,6 +39,18 @@ public:
 		}
 	}
 
+	Array& operator=(const Array& obj)
+	{
+		delete arr;
+		size = obj.size;
+		arr = new T[size];
+		for (size_t i = 0; i < size; i++)
+		{
+			arr[i] = obj.arr[i];
+		}
+	}
+
+
 	~Array()
 	{
 		delete[] arr;
